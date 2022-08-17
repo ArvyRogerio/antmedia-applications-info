@@ -2,7 +2,7 @@ Pequeno código que fiz para autenticar no Ant Media Server Enterprise e obter o
 
 # Explicação
 
-O Ant Media Server possui uma API que precisa autenticar antes de usar qualquer recurso geral (*ManagementRestService*), porém, não existe um token e sim é controlado por Session (nível navegador), o que inviabiliza o uso em scripts, como PHP por exemplo. Assim precisa autenticar e usar o session gerado pelo Java/Tomcat, passando como cookie na requisiçào da API.
+O Ant Media Server possui uma API que precisa autenticar antes de usar qualquer recurso geral (*ManagementRestService*), porém, não existe um token e sim é controlado por Session (nível navegador), o que inviabiliza o uso em scripts, como PHP por exemplo. Assim precisa autenticar e usar o session gerado pelo Java/Tomcat, passando como cookie na requisição da API.
 
 Este código também armazena o session em um arquivo *session.txt* para evitar abrir um novo session a cada execução, o que sobrecarrega a memória interna do Java (*JVM Heap*). Se o AMS for reiniciado ou a sessão expirar, ele detecta e gera uma nova sessão e tenta 2 vezes antes de abortar.
 
@@ -21,8 +21,11 @@ Fiz o código para parar o serviço do AMS quando ficar ocioso por muito tempo (
 # Referências
 
 https://antmedia.io/rest/
+
 https://antmedia.io/rest/#/ManagementRestService/authenticateUser
+
 https://antmedia.io/rest/#/ManagementRestService/getApplicationInfo
+
 https://antmedia.io/hourly/
 
 # Café? Eu também gosto!
