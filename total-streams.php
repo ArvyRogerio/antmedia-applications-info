@@ -54,7 +54,7 @@ for ($a=1;$a<3;$a++) {
    $server_response=@curl_exec($ch);
 
    //Se voltou erro, provavelmente a sessão expirou
-   if ($server_response=='') {
+   if (strpos($server_response,'HTTP Status 403')>-1) {
       NovoSession();
    } else {
       break;
