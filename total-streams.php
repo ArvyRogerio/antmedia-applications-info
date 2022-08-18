@@ -63,7 +63,7 @@ for ($a=1;$a<3;$a++) {
 }
 
 //Não conseguiu obter os dados
-if ($server_response=='') {
+if ($server_response=='' or strpos($server_response,'HTTP Status 403')>-1) {
    echo 'ERR';
    exit(1);
 }
